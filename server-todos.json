@@ -1,14 +1,20 @@
 [
-  {
-    "id": 1,
-    "title": "Get Started",
-    "completed": true,
-    "createdAt": "Tue Sep 14 2021"
-  },
-  {
-    "id": 2,
-    "title": "Keep Going",
-    "completed": true,
-    "createdAt": "Tue Sep 14 2021"
-  }
+   {
+      "id": 1,
+      "title": "Get Started",
+      "completed": false,
+      "createdAt": "Tue Sep 14 2021"
+   },
+   {
+      "id": 2,
+      "title": "Keep Going",
+      "completed": false,
+      "createdAt": "Tue Sep 14 2021"
+   },
+   {
+      "id": 3,
+      "title": "Keep Going",
+      "completed": true,
+      "createdAt": "Tue Sep 14 2021"
+   }
 ]
