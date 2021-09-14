@@ -7,7 +7,7 @@ const app = express();
 
 const LISTINGS_DATA_FILE = path.join(__dirname, 'server-todos.json');
 
-app.set('port', process.env.PORT || 8000);
+app.set('port', process.env.PORT || 3000);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
