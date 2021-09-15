@@ -14,16 +14,12 @@ describe('OnTheTodo', () => {
 
   it('should get list of pending todos', () => {
     gotoApp();
-
-    cy.get('div[data-testid="pending-todo-list"]').should('exist');
-    cy.get('div.pending-todo-item').should('have.length', 2);
+    cy.get('.pending-todo-item').should('have.length', 2);
   });
 
   it('should get list of completed todos', () => {
     gotoApp();
-
-    cy.get('div[data-testid="completed-todo-list"]').should('exist');
-    cy.get('div.completed-todo-item').should('have.length', 2);
+    cy.get('.completed-todo-item').should('have.length', 2);
   });
 
   it('should show an input box', () => {

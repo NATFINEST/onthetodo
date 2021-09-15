@@ -15,8 +15,6 @@ const TodoContainer = () => {
     getTodoItems();
   }, []);
 
-  console.log(state);
-
   return (
     <>
       <div className="todo-list" data-testid="todo-list">
