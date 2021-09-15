@@ -5,14 +5,16 @@ const path = require('path');
 
 const app = express();
 
-const LISTINGS_DATA_FILE = path.join(__dirname, 'server-todos.json');
-
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8000);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/todos', (_req, res) => {
+// Set data store file
+const LISTINGS_DATA_FILE = path.join(__dirname, 'server-todos.json');
+
+// Get All Todo Items
+app.get('/api/todos', (_req, res) => {
   setTimeout(() => {
     fs.readFile(LISTINGS_DATA_FILE, (err, data) => {
       res.setHeader('Cache-Control', 'no-cache');
@@ -21,7 +23,8 @@ app.get('/todos', (_req, res) => {
   }, 1000);
 });
 
-app.post('/todos', (req, res) => {
+// Add todo Item to database
+app.post('/api/todos', (req, res) => {
   fs.readFile(LISTINGS_DATA_FILE, (err, data) => {
     const todoItems = JSON.parse(data);
 
@@ -38,7 +41,8 @@ app.post('/todos', (req, res) => {
   });
 });
 
-app.post('/todos/:id/delete', (req, res) => {
+// Remove Todo Item from database
+app.post('/api/todos/:id/delete', (req, res) => {
   fs.readFile(LISTINGS_DATA_FILE, (err, data) => {
     const id = parseInt(req.params.id);
     let todoItems = JSON.parse(data);
@@ -54,7 +58,8 @@ app.post('/todos/:id/delete', (req, res) => {
   });
 });
 
-app.post('/todos/:id/update', (req, res) => {
+// Updated state of pending todo to completed
+app.post('/api/todos/:id/update', (req, res) => {
   fs.readFile(LISTINGS_DATA_FILE, (err, data) => {
     const id = parseInt(req.params.id);
     let todoItems = JSON.parse(data);
