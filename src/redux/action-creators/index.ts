@@ -33,3 +33,45 @@ export const getTodoItems = () => {
       });
   };
 };
+
+export const makeTodoItemCompleted = (id: number) => {
+  return async (disptach: Dispatch<Action>) => {
+    disptach({
+      type: ActionTypes.LOADING,
+    });
+    return axios
+      .post(`/api/todos/${id}/update`)
+      .then(({ data }) => {
+        disptach({
+          type: ActionTypes.UPDATE_TODO,
+          payload: data,
+        });
+      })
+      .catch(() => {
+        disptach({
+          type: ActionTypes.ERROR,
+        });
+      });
+  };
+};
+
+export const deleteTodoItem = (id: number) => {
+  return async (disptach: Dispatch<Action>) => {
+    disptach({
+      type: ActionTypes.LOADING,
+    });
+    return axios
+      .post(`/api/todos/${id}/delete`)
+      .then(({ data }) => {
+        disptach({
+          type: ActionTypes.UPDATE_TODO,
+          payload: data,
+        });
+      })
+      .catch(() => {
+        disptach({
+          type: ActionTypes.ERROR,
+        });
+      });
+  };
+};
