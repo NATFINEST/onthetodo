@@ -8,13 +8,13 @@
   {
     "id": 2,
     "title": "Second Item",
-    "completed": true,
+    "completed": false,
     "createdAt": "Tue Sep 14 2021"
   },
   {
     "id": 3,
     "title": "Third Item",
-    "completed": false,
+    "completed": true,
     "createdAt": "Tue Sep 14 2021"
   },
   {

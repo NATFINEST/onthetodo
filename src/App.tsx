@@ -1,13 +1,19 @@
-import './App.css';
-import InputContainer from './components/input/InputContainer';
+import './App.scss';
+import InputBox from './components/input/InputBox';
 import TodoContainer from './components/todos/TodoContainer';
+import logo from './clipboard.svg';
 
 const App = () => {
   return (
     <div className="App">
-      <h2 data-testid="title">OnTheTodo</h2>
-      <InputContainer />
-      <TodoContainer />
+      <div className="TodoApp">
+        <img src={logo} alt="logo" width="50" />
+        <h2 className="heading" data-testid="title">
+          OnTheTodo
+        </h2>
+        <InputBox />
+        <TodoContainer />
+      </div>
     </div>
   );
 };

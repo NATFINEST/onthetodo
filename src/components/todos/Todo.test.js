@@ -1,16 +1,17 @@
-import { render } from '@testing-library/react';
-import TodoContainer from './TodoContainer';
+import axios from 'axios';
+import * as actions from '../../redux/action-creators';
+import store from '../../redux/store';
 
-describe('Todo List', () => {
-  it('should show a list of pending todos', () => {
-    const { container } = render(<TodoContainer />);
-    const pendingTodos = container.querySelectorAll('.pending-todo-item');
-    expect(pendingTodos).toHaveLength(2);
-  });
-
-  it('should show a list of completed todos', () => {
-    const { container } = render(<TodoContainer />);
-    const completedTodos = container.querySelectorAll('.completed-todo-item');
-    expect(completedTodos).toHaveLength(2);
+describe('Store', () => {
+  const books = [{ id: 1, name: 'Refactoring' }];
+  it('Fetch books from remote', () => {
+    axios.get = jest
+      .fn()
+      .mockImplementation(() => Promise.resolve({ data: books }));
+    return store.dispatch(actions.fetchBooks()).then(() => {
+      const state = store.getState();
+      expect(state.books.length).toEqual(1);
+      expect(state.books).toEqual(books);
+    });
   });
 });

@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: linear-gradient(to left top, #08b3e5, #2af598);
+}
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.TodoApp {
+  background: white;
+  width: 500px;
+  border-radius: 5px;
+  padding: 50px 10px;
+}
+.heading {
+  padding: 20px 10px;
+  color: #08b3e5;
+}
+button {
+  cursor: pointer;
+  border: 0;
+}

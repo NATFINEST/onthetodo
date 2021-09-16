@@ -1,0 +1,46 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+
+  h1 {
+    font-size: 16px;
+  }
+
+  button {
+    background: #29f598;
+    padding: 5px;
+  }
+
+  &.pending {
+    background-color: #eee;
+    button {
+      &:hover {
+        background-color: #19de84;
+      }
+    }
+  }
+
+  &.completed {
+    background-color: #2af598;
+
+    &::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f00c';
+    }
+
+    button {
+      color: #ca1d1d;
+      font-size: 20px;
+
+      &:hover {
+        color: #ff0000;
+      }
+    }
+  }
+}
