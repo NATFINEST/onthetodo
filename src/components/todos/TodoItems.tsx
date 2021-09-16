@@ -14,14 +14,20 @@ const TodoItems = ({ todos, completeTodoItem, deleteTodoItem }: IProps) => {
         todo.completed === false ? (
           <div className="todo-item pending" key={todo.id}>
             <h1 className="title">{todo.title}</h1>
-            <button onClick={() => completeTodoItem(todo.id)}>
+            <button
+              onClick={() => completeTodoItem(todo.id)}
+              aria-label="Mark Todo Item as Completed"
+            >
               <i className="fa fa-check" />
             </button>
           </div>
         ) : (
           <div className="todo-item completed" key={todo.id}>
             <h1 className="title">{todo.title}</h1>
-            <button onClick={() => deleteTodoItem(todo.id)}>
+            <button
+              onClick={() => deleteTodoItem(todo.id)}
+              aria-label="Delete Todo Item"
+            >
               <i className="fa fa-times" />
             </button>
           </div>

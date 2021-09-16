@@ -8,7 +8,7 @@ const InputBox = () => {
         type="text"
         placeholder="What do you want to do?"
       />
-      <button>
+      <button aria-label="Add Todo Item to List">
         <i className="fa fa-plus" />
       </button>
     </div>

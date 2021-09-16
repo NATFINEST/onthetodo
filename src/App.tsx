@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="TodoApp">
-        <img src={logo} alt="logo" width="50" />
+        <img className="logo" src={logo} alt="logo" />
         <h2 className="heading" data-testid="title">
           OnTheTodo
         </h2>
